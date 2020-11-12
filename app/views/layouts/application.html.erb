@@ -16,10 +16,10 @@
     <div class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid justify-content-between">
         <%= link_to "Simple Airbnb", flats_path, class:"navbar-brand text-dark" %>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="/flats">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="name" value="<%= params[:name] %>">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          <button class="btn btn-outline-primary my-2 my-sm-0 mx-2" type="submit"><%= link_to "Add Flat", new_flat_path %></button>
+          <button class="btn btn-outline-primary my-2 my-sm-0 mx-2"><%= link_to "Add Flat", new_flat_path %></button>
         </form>
       </div>
     </div>

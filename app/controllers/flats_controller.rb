@@ -3,7 +3,12 @@ class FlatsController < ApplicationController
 
   # GET /flats
   def index
-    @flats = Flat.all
+    if params[:name]
+      @flats = Flat.where("name LIKE ?", "%#{params[:name]}%")
+    else
+      @flats = Flat.all
+    end
+    @flats
   end
 
   # GET /flats/1
